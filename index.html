@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>I'm Sorry</title>
+    <style>
+        body {
+            margin: 0;
+            height: 100vh;
+            background: linear-gradient(135deg, #ffccf9, #ff9cee);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-family: 'Arial', sans-serif;
+            overflow: hidden;
+        }
+
+    .container {
+            text-align: center;
+            background: rgba(255, 255, 255, 0.8);
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            background-image: url('C:\Users\aayan\OneDrive\Desktop\ayaz\WhatsApp Image 2024-12-31 at 19.54.57_87714c60.jpg'); /* Replace with your image path */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+        
+
+        h1 {
+            font-size: 3rem;
+            color: #ff69b4;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.3);
+        }
+
+        p {
+            font-size: 1.2rem;
+            color: #e91e63;
+            margin: 10px 0;
+        }
+
+        button {
+            background: linear-gradient(45deg, #ff79c6, #ff5e78);
+            border: none;
+            color: white;
+            padding: 15px 30px;
+            font-size: 1.2rem;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        button:hover {
+            transform: scale(1.1);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .hearts {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .heart {
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, pink, #ff69b4);
+            border-radius: 50%;
+            animation: floatUp 5s infinite ease-in-out;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .heart:before, .heart:after {
+            content: '';
+            position: absolute;
+            width: 50px;
+            height: 50px;
+            background: radial-gradient(circle, pink, #ff69b4);
+            border-radius: 50%;
+        }
+
+        .heart:before {
+            top: -25px;
+            left: 0;
+        }
+
+        .heart:after {
+            left: 25px;
+            top: 0;
+        }
+
+        @keyframes floatUp {
+            0% {
+                transform: translateY(100vh) scale(1);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateY(-500px) scale(1.1);
+                opacity: 0;
+            }
+        }
+
+        .emoji {
+            font-size: 2.5rem;
+            animation: bounce 2s infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+
+        .rose {
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            font-size: 2rem;
+            animation: rise 5s infinite ease-in-out;
+            opacity: 0.6;
+        }
+
+        @keyframes rise {
+            0% {
+                transform: translateX(-50%) translateY(0);
+                opacity: 0.6;
+            }
+            100% {
+                transform: translateX(-50%) translateY(-100vh);
+                opacity: 0.2;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>I'm Sorry 💗</h1>
+        <p>Dear Shifa,</p>
+        <p>Hi Shifa, Ayaaz this side.</p>
+        <p>I really didn’t want to make you upset and I really wanted to talk to you,</p>
+        <p>but the circumstances were not right. I was trying to communicate with you.</p>
+        <p>Every time I came upwards, my eyes were just searching for you,</p>
+        <p>but every other time, some work came out.</p>
+        <p>I even wanted to have a small chat with aunty to ask her whether she had the food or not,</p>
+        <p>but I really just couldn’t do it.</p>
+        <p>I have been waiting for you for six years,</p>
+        <p>and I really crave to have a chat with you, even a small one.</p>
+        <p>Honestly, you were looking like poetry that day,</p>
+        <p>and I was so dissolved in your eyes that for a moment, everything blurred around you.</p>
+        <p>I hope you understand, as you are a very understanding girl, which I like about you.</p>
+        <p>I hope we will meet again soon, maybe... 💗.</p>
+        <p>Please forgive me. 🫶🏻</p>
+        <button id="magicButton">Click here, cutie 🥰</button>
+        <div id="flowerMessage"></div>
+    </div>
+
+    <div class="hearts"></div>
+    <div class="rose">🌹</div>
+    <div class="rose">🪻</div>
+    <div class="rose">🌹</div>
+
+    <script>
+        // Heart Animation
+        function createHearts() {
+            const heartsContainer = document.querySelector('.hearts');
+            for (let i = 0; i < 20; i++) {
+                const heart = document.createElement('div');
+                heart.classList.add('heart');
+                heart.style.left = `${Math.random() * 100}%`;
+                heart.style.animationDelay = `${Math.random() * 2}s`;
+                heart.style.animationDuration = `${2 + Math.random() * 3}s`;
+                heartsContainer.appendChild(heart);
+            }
+        }
+
+        createHearts();
+
+        // Button Interaction
+        document.getElementById('magicButton').addEventListener('click', () => {
+            const flowerMessage = document.getElementById('flowerMessage');
+            flowerMessage.innerHTML = `
+                <h2>🌹Roses and Lavenders Just for You 🪻</h2>
+                <p>I wished I could present these flowers to you personally, but…🙂. Khair, I am really sorry for my mistake. Please forgive me. Love you, Ayaaz.</p>
+                <p>🌹🌹🌹 🪻🪻🪻</p>
+            `;
+            flowerMessage.classList.add('emoji');
+        });
+    </script>
+</body>
+</html>
